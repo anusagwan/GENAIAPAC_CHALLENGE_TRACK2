@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Weather Agent</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input {
+            padding: 12px;
+            width: 300px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-left: 10px;
+            background: #22c55e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌦️ AI Weather Agent</h1>
+
+    <input id="query" placeholder="e.g. weather in Mumbai" />
+    <button onclick="askAgent()">Ask</button>
+
+    <div id="response"></div>
+
+    <script>
+        async function askAgent() {
+            const query = document.getElementById("query").value;
+
+            const url = "https://mcp-agent-607655775184.asia-south1.run.app/ask?query=" + encodeURIComponent(query);
+
+            const res = await fetch(url);
+            const data = await res.json();
+
+            document.getElementById("response").innerText = data.response;
+        }
+    </script>
+
+</body>
+</html>

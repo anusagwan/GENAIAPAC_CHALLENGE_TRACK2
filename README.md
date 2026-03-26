@@ -199,13 +199,6 @@ The agent:
 - Multiple tools integration  
 - LLM-based reasoning  
 
----
-
-## 👨‍💻 Author
-
-Anu Sagwan  
-
----
 
 ## 🏁 Conclusion
 
